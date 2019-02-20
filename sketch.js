@@ -12,7 +12,7 @@ function preload() {
   dir = loadImage('assets/downchar.png');
   leftwalk = loadAnimation('assets/leftwalk/leftwalk0001.png','assets/leftwalk/leftwalk0004.png');
   rightwalk = loadAnimation('assets/rightwalk/rightwalk0001.png','assets/rightwalk/rightwalk0004.png');
-  upwalk = loadAnimation('assets/upwalk/upwalk0001.png','assets/upwalk/upwalk0004.png');
+  upwalk = loadAnimation('assets/upwalk/upwalk0001.png','assets/upwalk/upwalk0006.png');
   downwalk = loadAnimation('assets/downwalk/downwalk0001.png','assets/downwalk/downwalk0004.png');
 }
 
