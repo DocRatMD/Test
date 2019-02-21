@@ -3,8 +3,11 @@ let char;
 let dir;
 let picArray;
 let startVar;
+let leftDown;
 let leftwalk,rightwalk,upwalk,downwalk;
 let isStoppedLeft,isStoppedRight,isStoppedUp,isStoppedDown;
+let isWalkingLeft,isWalkingRight,isWalkingUp,isWalkingDown;
+let wKey,aKey,sKey,dKey;
 
 function preload() {
   leftchar = loadImage('assets/leftchar.png');
@@ -28,6 +31,11 @@ isStoppedDown = false;
 isStoppedUp = false;
 isStoppedLeft = false;
 isStoppedRight = false;
+isWalkingDown = false;
+isWalkingUp = false;
+isWalkingLeft = false;
+isWalkingRight = false;
+
 // if (isStoppedUp == false && isStoppedDown == false && isStoppedLeft == false && isStoppedRight == false){
 //   image(dir,Char.x,Char.y,104,176);
 // }
@@ -39,8 +47,26 @@ function draw() {
   background(100);
   char.move();
   char.show();
+  wKey = keyIsDown(87) || false;
+  aKey = keyIsDown(65) || false;
+  sKey = keyIsDown(83) || false;
+  dKey = keyIsDown(68) || false;
+
+  if (wKey == false && aKey == false && sKey == false && dKey == false) {
+    isWalkingDown = false;
+    isWalkingUp = false;
+    isWalkingLeft = false;
+    isWalkingRight = false;
+  }
 }
 
 function keyReleased() {
   startVar = false;
+  // isWalkingDown = false;
+  // isWalkingUp = false;
+  // isWalkingLeft = false;
+  // isWalkingRight = false;
 }
+
+
+// initialize as false if keydown = true then true else false
