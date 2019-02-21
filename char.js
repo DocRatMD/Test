@@ -4,8 +4,32 @@ function Char(x,y) {
 
   this.show = function() {
     //image(dir,x,y,104,176);
-    if (isStopped === true) {
+    if (keyIsPressed === false && startVar == true) {
       image(dir,x,y,104,176);
+    }
+    if (isStoppedDown == true) {
+      isStoppedUp = false;
+      isStoppedLeft = false;
+      isStoppedRight = false;
+      image(picArray[3],x,y,104,176);
+    }
+    if (isStoppedUp == true) {
+      isStoppedDown = false;
+      isStoppedLeft = false;
+      isStoppedRight = false;
+      image(picArray[2],x,y,104,176);
+    }
+    if (isStoppedLeft == true) {
+      isStoppedDown = false;
+      isStoppedUp = false;
+      isStoppedRight = false;
+      image(picArray[0],x,y,104,176);
+    }
+    if (isStoppedRight == true) {
+      isStoppedDown = false;
+      isStoppedLeft = false;
+      isStoppedUp = false;
+      image(picArray[1],x,y,104,176);
     }
   }
 
@@ -14,29 +38,38 @@ function Char(x,y) {
 
     if (keyIsDown(65) && 0 <= x - 30) {
     x -= 3;
-    //dir = loadImage('assets/leftchar.png');
     animation(leftwalk,x,y);
-    isStopped = false;
+    isStoppedDown = false;
+    isStoppedUp = false;
+    isStoppedLeft = true;
+    isStoppedRight = false;
   }
 
     if (keyIsDown(68) && width >= x + 30) {
     x += 3;
-    //dir = loadImage('assets/rightchar.png');
     animation(rightwalk,x,y);
-    isStopped = false;
+    isStoppedDown = false;
+    isStoppedUp = false;
+    isStoppedLeft = false;
+    isStoppedRight = true;
 }
 
 if (keyIsDown(87) && 0 <= y - 55) {
   y -= 3;
-  //dir = loadImage('assets/upchar.png');
   animation(upwalk,x,y);
-  isStopped = false;
+  isStoppedDown = false;
+  isStoppedUp = true;
+  isStoppedLeft = false;
+  isStoppedRight = false;
 }
 
 if (keyIsDown(83) && height >= y + 50) {
     y += 3;
     animation(downwalk,x,y);
-    isStopped = false;
+    isStoppedDown = true;
+    isStoppedUp = false;
+    isStoppedLeft = false;
+    isStoppedRight = false;
     }
   }
 }
